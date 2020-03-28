@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbOrderTime = new System.Windows.Forms.TextBox();
+            this.tbOrderNumber = new System.Windows.Forms.TextBox();
             this.tbCustomerAddress = new System.Windows.Forms.TextBox();
             this.tbCustomerTel = new System.Windows.Forms.TextBox();
             this.tbCustomerName = new System.Windows.Forms.TextBox();
@@ -40,6 +41,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbTotal2 = new System.Windows.Forms.TextBox();
+            this.tbTotal1 = new System.Windows.Forms.TextBox();
             this.tbProductPrice2 = new System.Windows.Forms.TextBox();
             this.tbProductPrice1 = new System.Windows.Forms.TextBox();
             this.tbProductCount2 = new System.Windows.Forms.TextBox();
@@ -51,9 +54,7 @@
             this.lable11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbATotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -61,8 +62,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.tbOrderTime);
+            this.groupBox1.Controls.Add(this.tbOrderNumber);
             this.groupBox1.Controls.Add(this.tbCustomerAddress);
             this.groupBox1.Controls.Add(this.tbCustomerTel);
             this.groupBox1.Controls.Add(this.tbCustomerName);
@@ -78,19 +79,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "订单信息";
             // 
-            // textBox5
+            // tbOrderTime
             // 
-            this.textBox5.Location = new System.Drawing.Point(319, 117);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(153, 25);
-            this.textBox5.TabIndex = 11;
+            this.tbOrderTime.Enabled = false;
+            this.tbOrderTime.Location = new System.Drawing.Point(319, 117);
+            this.tbOrderTime.Name = "tbOrderTime";
+            this.tbOrderTime.Size = new System.Drawing.Size(170, 25);
+            this.tbOrderTime.TabIndex = 11;
             // 
-            // textBox4
+            // tbOrderNumber
             // 
-            this.textBox4.Location = new System.Drawing.Point(86, 117);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(120, 25);
-            this.textBox4.TabIndex = 10;
+            this.tbOrderNumber.Enabled = false;
+            this.tbOrderNumber.Location = new System.Drawing.Point(86, 117);
+            this.tbOrderNumber.Name = "tbOrderNumber";
+            this.tbOrderNumber.Size = new System.Drawing.Size(120, 25);
+            this.tbOrderNumber.TabIndex = 10;
             // 
             // tbCustomerAddress
             // 
@@ -160,8 +163,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.tbTotal2);
+            this.groupBox2.Controls.Add(this.tbTotal1);
             this.groupBox2.Controls.Add(this.tbProductPrice2);
             this.groupBox2.Controls.Add(this.tbProductPrice1);
             this.groupBox2.Controls.Add(this.tbProductCount2);
@@ -178,6 +181,22 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "订单项信息";
+            // 
+            // tbTotal2
+            // 
+            this.tbTotal2.Enabled = false;
+            this.tbTotal2.Location = new System.Drawing.Point(612, 134);
+            this.tbTotal2.Name = "tbTotal2";
+            this.tbTotal2.Size = new System.Drawing.Size(95, 25);
+            this.tbTotal2.TabIndex = 16;
+            // 
+            // tbTotal1
+            // 
+            this.tbTotal1.Enabled = false;
+            this.tbTotal1.Location = new System.Drawing.Point(612, 72);
+            this.tbTotal1.Name = "tbTotal1";
+            this.tbTotal1.Size = new System.Drawing.Size(95, 25);
+            this.tbTotal1.TabIndex = 15;
             // 
             // tbProductPrice2
             // 
@@ -225,7 +244,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(625, 35);
+            this.label9.Location = new System.Drawing.Point(642, 44);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 15);
             this.label9.TabIndex = 8;
@@ -243,7 +262,7 @@
             // lable11
             // 
             this.lable11.AutoSize = true;
-            this.lable11.Location = new System.Drawing.Point(417, 35);
+            this.lable11.Location = new System.Drawing.Point(412, 44);
             this.lable11.Name = "lable11";
             this.lable11.Size = new System.Drawing.Size(37, 15);
             this.lable11.TabIndex = 2;
@@ -252,7 +271,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(518, 35);
+            this.label2.Location = new System.Drawing.Point(519, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 1;
@@ -260,39 +279,29 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(358, 410);
+            this.button1.BackColor = System.Drawing.Color.LightCyan;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Location = new System.Drawing.Point(301, 413);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 28);
+            this.button1.Size = new System.Drawing.Size(135, 29);
             this.button1.TabIndex = 2;
             this.button1.Text = "计算";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // tbATotal
             // 
-            this.textBox1.Location = new System.Drawing.Point(612, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(82, 25);
-            this.textBox1.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(612, 134);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(82, 25);
-            this.textBox2.TabIndex = 16;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(624, 409);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(111, 25);
-            this.textBox3.TabIndex = 17;
+            this.tbATotal.Enabled = false;
+            this.tbATotal.Location = new System.Drawing.Point(583, 413);
+            this.tbATotal.Name = "tbATotal";
+            this.tbATotal.Size = new System.Drawing.Size(136, 25);
+            this.tbATotal.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(555, 417);
+            this.label3.Location = new System.Drawing.Point(515, 420);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 15);
             this.label3.TabIndex = 17;
@@ -302,14 +311,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbATotal);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "网络订单";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -322,8 +335,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbOrderTime;
+        private System.Windows.Forms.TextBox tbOrderNumber;
         private System.Windows.Forms.TextBox tbCustomerAddress;
         private System.Windows.Forms.TextBox tbCustomerTel;
         private System.Windows.Forms.TextBox tbCustomerName;
@@ -344,9 +357,9 @@
         private System.Windows.Forms.Label lable11;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbTotal2;
+        private System.Windows.Forms.TextBox tbTotal1;
+        private System.Windows.Forms.TextBox tbATotal;
         private System.Windows.Forms.Label label3;
     }
 }

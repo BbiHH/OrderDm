@@ -49,6 +49,7 @@ namespace Order.Domain
         public ICollection<OrderItem> OrderItems
         {
             get;
+            set;
         }
 
         /// <summary>
